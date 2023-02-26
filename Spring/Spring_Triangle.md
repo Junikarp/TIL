@@ -1,7 +1,7 @@
 ## 스프링 트라이앵글 (Spring Triangle)
 > 1. IoC (Inversion of Control) : 제어의 역전
->   * [IoC (Inversion of Control) 이란](#ioc-inversion-of-control-이란)
->   * [DI (Dependency injection) 이란](#di-dependency-injection-이란)
+>    * [IoC (Inversion of Control) 이란](#ioc-inversion-of-control-이란)
+>    * [DI (Dependency injection) 이란](#di-dependency-injection-이란)
 > 2. AOP (Aspect Oriented Programming) : 관점 지향 프로그래밍
 >    * [AOP (Aspect Oriented Programming) 이란](#aop-aspect-oriented-programming-이란)
 >    * [AOP 의 주요 개념](#aop-의-주요-개념)
