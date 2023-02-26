@@ -64,14 +64,14 @@
 
 
 ### reference
-Ioc
-https://medium.com/@jang.wangsu/di-inversion-of-control-container-%EB%9E%80-12ecd70ac7ea
-https://biggwang.github.io/2019/08/31/Spring/IoC,%20DI%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C/
-https://velog.io/@gillog/Spring-DIDependency-Injection
+IoC
+* https://medium.com/@jang.wangsu/di-inversion-of-control-container-%EB%9E%80-12ecd70ac7ea
+* https://biggwang.github.io/2019/08/31/Spring/IoC,%20DI%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C/
+* https://velog.io/@gillog/Spring-DIDependency-Injection
 
 AOP
-https://engkimbs.tistory.com/746
-https://catsbi.oopy.io/fb62f86a-44d2-48e7-bb9d-8b937577c86c
+* https://engkimbs.tistory.com/746
+* https://catsbi.oopy.io/fb62f86a-44d2-48e7-bb9d-8b937577c86c
 
 PSA
-https://sabarada.tistory.com/127
+* https://sabarada.tistory.com/127
