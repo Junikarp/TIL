@@ -1,7 +1,7 @@
 ## Recursion
 
 * Recursion 은 자기 자신을 호출하는 함수이다.
-
+---
 아래의 코드는 Recursion 함수의 예시이다.
 ```java
 public class Code01{
@@ -63,5 +63,7 @@ if(k<=0)
 func(k-1); 
 ```
 
+---
+### Reference
 
-권오흠 교수님의 [알고리즘] 제1-1강 Recursion의 개념과 기본 예제들 (1/3) 참조 ([링크](https://www.youtube.com/watch?v=ln7AfppN7mY))
+* 권오흠 교수님의 [알고리즘] 제1-1강 Recursion의 개념과 기본 예제들 (1/3) 참조 ([링크](https://www.youtube.com/watch?v=ln7AfppN7mY))
