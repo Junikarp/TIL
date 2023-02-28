@@ -1,4 +1,4 @@
-## Dependency Injection
+# Dependency Injection
 * [강한 결합](#강한-결합)
 * [느슨한 결합](#느슨한-결합)
 * 의존성 주입(DI)은 어떻게 하는걸까?
