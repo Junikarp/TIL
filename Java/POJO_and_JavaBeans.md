@@ -19,12 +19,12 @@
 * (3) 단일 책임 원칙을 지키는 클래스여야한다.
    * 책임과 역할이 각기 다른 코드는 서로 다른 클래스로 나뉘어야 한다.  
 
-## POJO 의 장점
+### POJO 의 장점
    * 특정 규약에 종속되지 않아 로우레벨 코드와 비즈니스 코드가 분리되어 깔끔한 코드 작성이 가능하다.
    * 특정 환경에 종속되지 않아 테스트하기 좋다.
    * 객체지향적인 설계를 자유롭게 적용 가능하다.
 
-## POJO 예시 코드
+### POJO 예시 코드
 ```java
 public class Animal {
     String dog;
@@ -51,7 +51,7 @@ JavaBeans 이란 구현 방법에 대해 다음의 컨벤션을 적용한 POJO �
 * Fields 는 getter 와 setter 로만 접근되어야 한다.
 * constructor 는 argument 를 가져서는 안된다.
 
-## JavaBeans 장·단점
+### JavaBeans 장·단점
 * 장점
    * Bean 의 속성, 이벤트, 메소드는 다른 애플리케이션에 노출 가능하다.
    * Bean 을 구성하는데 도움이 된느 보조 프로그램이 제공될 수 있따.
@@ -63,7 +63,7 @@ JavaBeans 이란 구현 방법에 대해 다음의 컨벤션을 적용한 POJO �
    * 모든 property 에 대해 getter 를 만들고 대부분의 property 에 대해 setter 를 만들어야 한느 경우 많은 양의 코드가 생긴다.
        * Lombok 을 이용해 완화 가능 
 
-## JavaBeans 예시 코드
+### JavaBeans 예시 코드
 ```java
 public class Animal { 
    
@@ -82,8 +82,8 @@ public class Animal {
 }
 ```
 참조
-[POJO란?](https://doing7.tistory.com/81)
-[POJO(Plain Old Java Object)와 JavaBean](https://2jinishappy.tistory.com/324)
-[POJO 와 Beans 의 차이점](https://sanghye.tistory.com/13)
-[POJO](https://www.nowwatersblog.com/springboot/springstudy/POJO)
-[JavaBeans 정리](https://velog.io/@dion/what-is-javabeans-and-why-use-javabeans)
+* [POJO란?](https://doing7.tistory.com/81)
+* [POJO(Plain Old Java Object)와 JavaBean](https://2jinishappy.tistory.com/324)
+* [POJO 와 Beans 의 차이점](https://sanghye.tistory.com/13)
+* [POJO](https://www.nowwatersblog.com/springboot/springstudy/POJO)
+* [JavaBeans 정리](https://velog.io/@dion/what-is-javabeans-and-why-use-javabeans)
