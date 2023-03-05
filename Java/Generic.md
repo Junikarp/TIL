@@ -133,6 +133,71 @@ class ClassName<E> {
 ```
 위의 코드와 같이 제네릭 메소드는 제네릭 클래스 타입과 별도로 지정되며, 메소드의 E 타입은 제네릭 클래스의 E 타입과 다른 독립적인 타입이다.
 
+## 제한된 제네릭(Generic)과 와일드카드
+
+### (1) 상한 경계 (제네릭 타입 < extends 상위타입 >)
+extends 뒤에 오는 타입이 최상위 타입으로 한계가 정해진다.
+
+```java
+public class ClassName <K extends Number> {...}
+```
+* Number 와 이를 상속하는 Integer, Short, Double 등의 타입이 지정될 수 있다.
+* 객체 혹은 메소드 호출 시 K 는 지정된 타입으로 변환된다.
+```java
+public class ClassName <? extends T> {...}
+```
+* T 와 이를 상속하는 Integer, Short, Double 등의 타입이 지정될 수 있다.
+* 객체 혹은 메소드 호출 시 지정되는 타입이 없어 타입 참조가 불가능하다.
+```java
+public class ClassName <K extends Number> { 
+	... 
+}
+ 
+public class Main {
+	public static void main(String[] args) {
+ 
+		ClassName<Double> a1 = new ClassName<Double>();	// 정상 작동
+ 
+		ClassName<String> a2 = new ClassName<String>(); // 에러 발생
+	}
+}
+```
+* 위와 같은 경우 Integer 는 Number 클래스를 상속받는 클래스라 가능하지만, String 은 별개의 클래스이기 때문에 에러가 발생한다. 
+### (2) 하한 경계 (제네릭 타입 < super 상위타입 >)
+super 뒤에 오는 타입이 최하위 타입으로 한계가 정해진다.
+대표적으로 해당 객체가 업 캐스팅(Up Casting) 되어야 할 때 사용하는데, 하위 타입의 자료들을 상위 타입으로 보고 조작해야 할 때 사용 가능하다.
+
+* 제네릭 타입에 대한 객체 비교
+```java
+public class SaltClass <E extends Comparable<E>> { ... }	// 에러 가능성 있음
+public class SaltClass <E extends Comparable<? super E>> { ... }	// 안전성이 높음
+
+public class Person {...}
+
+public class Student extends Person implements Comparable<Person> {
+    @Override
+    public int compareTo(Person o) { ... };
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SaltClass<Student> a = new SaltClass<Student>();
+    }
+}
+```
+* Comparable 에서 보다 상위 타입을 비교하는 것을 방지하기 위해서 <? super E> 를 사용해 미리 방지
+* 즉, <E extends Comparable<? super E>>는 E타입 혹은 E 타입의 super 클래스가 Comparable 을 의무적으로 구현해야 한다.
+* 이를 통해 Up Casting 의 안정성을 보장받는다. (타입 파라미터보다 더 높은 상위 타입 객체로 가는 것을 방지)
+
+
+### (3) 와일드 카드 (제네릭 타입 <?>)
+와일드 카드 <?> 은 <? extends Object>와 마찬가지로 아래의 코드와 같은 의미이다.
+```java
+public class ClassName extends Object {...}
+```
+* 어떤 타입을 리턴받아도 상관없다는 의미이다.
+* 보통 데이터가 아닌 기능의 사용에만 관심이 있는 경우에 사용한다.
+
 ---
 ### 참조
 * [제네릭의 개념](http://www.tcpschool.com/java/java_generic_concept)
