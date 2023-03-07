@@ -95,5 +95,4 @@ public class Gun implements Weapon {
 ```
 ---
 ### 참조
-*
-[자바 디자인 패턴의 이해 - Gof Design Pattern](https://catsbi.oopy.io/344dbe7b-9774-48fc-9c95-b554e9c1c4bc)
+* [자바 디자인 패턴의 이해 - Gof Design Pattern](https://catsbi.oopy.io/344dbe7b-9774-48fc-9c95-b554e9c1c4bc)
