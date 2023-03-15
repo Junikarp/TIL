@@ -79,7 +79,7 @@ public class BananaMilk() {
     }
 }
 ```
-* MakeMilk
+* MakeMilk.java
 ```java
 public class MakeMilk { 
     public static void main(String[] args) {
