@@ -1,4 +1,4 @@
-# MySQL_02
+# SQL_02
 
 ## Projection, Selection
 * Projection
