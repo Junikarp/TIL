@@ -79,7 +79,7 @@ public class BananaMilk() {
     }
 }
 ```
-* MakeMilk.java
+* MakeMilk
 ```java
 public class MakeMilk { 
     public static void main(String[] args) {
@@ -93,44 +93,11 @@ public class MakeMilk {
 ```
 위의 코드를 살펴보면 딸기우유와 바나나우유를 만드는 두가지의 코드에 중복되는 부분이 많은 것을 확인할 수 있다.
 
-## 패턴 구현
-* Milk.java
-```java
-abstract class Milk {
-    public void makeMilk() {
-        System.out.println("우유를 삽니다.");
-        System.out.println("우유를 끓입니다.");
-        
-        getFruit();
-        
-        System.out.println("완성품을 식힙니다.");
-    }
-    protected abstract void getFruit();
-}
-```
-위와 같이 Milk 라는 추상 클래스에서 공통된 코드 부분을 makeMilk 메서드를 통해 구현하였다. 우유의 종류에 따라 달라지는 재료는 getFruit 이라는 추상 메서드를 통해 분리하였다.
 
-* StrawberryMilk.java
-```java
-public class StrawberryMilk extends Milk {
-    @Override
-    protected void getFruit() {
-        System.out.println("딸기를 넣습니다.");
-    }
-}
-```
-* BananaMilk.java
-```java
-public class BananaMilk extends Milk {
-    @Override
-    protected void getFruit() {
-        System.out.println("바나나를 넣습니다.");
-    }
-}
-```
-각 하위 클래스에서는 구현체별로 다르게 처리해야하는 getFruit() 메서드만 재정의한다. 따라서 위와 같이 불필요한 중복을 해소하는 것이 가능하다.
+
+
+
 
 ---
 ### 참조
 * [자바 디자인 패턴의 이해 - Gof Design Pattern](https://catsbi.oopy.io/344dbe7b-9774-48fc-9c95-b554e9c1c4bc)
-* [템플릿 메소드 패턴 (Template Method Pattern)](https://hudi.blog/template-method-pattern/)
