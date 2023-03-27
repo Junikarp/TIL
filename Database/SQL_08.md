@@ -38,21 +38,21 @@ insert into test3 (name, dept, salary, bonus)
     value ('정대만', 'C', '1000', '200');
 ```
 
-![SQL_08_1.png](SQL_08%2FSQL_08_1.png)
+![SQL_08_1.png](image%2FSQL_08%2FSQL_08_1.png)
 
 데이터를 넣어주고 ifnull 을 이용해 null 대신 '빈칸입니다' 라는 문자열을 출력합니다.
 ```sql
 select name, dept, salary, ifnull(bonus, '빈칸입니다') from test3;
 ```
 
-![SQL_08_2.png](SQL_08%2FSQL_08_2.png)
+![SQL_08_2.png](image%2FSQL_08%2FSQL_08_2.png)
 
 또한 출력할 데이터로 칼럼을 지정하는 방법으로도 사용 가능하다.
 ```sql
 select name, dept, salary, ifnull(bonus, name) from test3;
 ```
 
-![SQL_08_3.png](SQL_08%2FSQL_08_3.png)
+![SQL_08_3.png](image%2FSQL_08%2FSQL_08_3.png)
 
 ## if 함수
 > if 함수는 조건을 지정하여 조건이 성립하였을 경우와 조건이 성립하지 않았을 경우의 출력값을 각각 지정하여 출력하는 함수이다.
@@ -69,7 +69,7 @@ salary 칼럼의 값이 300 이상이면 고액연봉자, 300 미만이면 일�
 select name, dept, salary, if(salary >= 300, '고액연봉자', '일반연봉자') from test3;
 ```
 
-![SQL_08_4.png](SQL_08%2FSQL_08_4.png)
+![SQL_08_4.png](image%2FSQL_08%2FSQL_08_4.png)
 
 위와 같이 조건 성립 여부에 따라 출력값이 달라지는 것을 확인가능하다.
 
@@ -98,7 +98,7 @@ select name
 from test3;
 ```
 
-![SQL_08_5.png](SQL_08%2FSQL_08_5.png)
+![SQL_08_5.png](image%2FSQL_08%2FSQL_08_5.png)
 
 위와 같이 case 에 따라 출력된 모습을 확인 가능하다.
 
@@ -117,7 +117,7 @@ select name as 이름
 from test3;
 ```
 
-![SQL_08_6.png](SQL_08%2FSQL_08_6.png)
+![SQL_08_6.png](image%2FSQL_08%2FSQL_08_6.png)
 
 위와 같이 테이블을 표현하는 것이 가능하다.
 
