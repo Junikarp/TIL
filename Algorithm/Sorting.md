@@ -5,13 +5,13 @@
 >    * [Insertion sort (삽입 정렬)](#insertion-sort--삽입-정렬-)
 > * fast
 >    * [Quick sort (퀵 정렬)](#quick-sort--퀵-정렬-)
->    * Merge sort (합병 정렬)
+>    * [Merge sort (합병 정렬)](#merge-sort--병합-정렬-)
 >    * Heap sort (힙 정렬)
 > * O(n)
 >    * Radix sort
 
 ## Selection sort (선택 정렬)
-선택 정렬은 현재 위치에 들어갈 값을 찾아 정렬하는 배열로, 현재 위치에 저장 될 값의 크기가 작은지, 큰지에 따라서 최소 선택 정렬(Min-Selection sort)와 최대 선택 정렬(Max-Selection sort)로 구분된다.
+> 선택 정렬은 현재 위치에 들어갈 값을 찾아 정렬하는 배열로, 현재 위치에 저장 될 값의 크기가 작은지, 큰지에 따라서 최소 선택 정렬(Min-Selection sort)와 최대 선택 정렬(Max-Selection sort)로 구분된다.
 
  * 기본 로직
    1. 정렬되지 않은 index 의 맨 앞에서 부터, 이를 포함한 그 이후의 배열값 중 가장 작은 값을 찾아간다.
@@ -76,7 +76,7 @@ Process finished with exit code 0
 ```
 
 ## Bubble sort (버블 정렬)
-버블 정렬은 매번 연속된 두개의 인덱스를 비교하여, 정한 기준의 값을 뒤로 넘겨 정렬하는 방법이다.
+> 버블 정렬은 매번 연속된 두개의 인덱스를 비교하여, 정한 기준의 값을 뒤로 넘겨 정렬하는 방법이다.
 
 * 기본 로직
   1. 삽입 정렬은 두 번째 인덱스부터 시작하며, 현재 인덱스 값과, 바로 이전의 인덱스 값을 비교한다.
@@ -116,7 +116,7 @@ Process finished with exit code 0
 ```
 
 ## Insertion sort (삽입 정렬)
-삽입 정렬은 현재 위치에서, 그 이하의 배열들을 비교하여 자신이 들어갈 위치를 찾아, 그 위치에 삽입하는 배열 알고리즘이다.
+>삽입 정렬은 현재 위치에서, 그 이하의 배열들을 비교하여 자신이 들어갈 위치를 찾아, 그 위치에 삽입하는 배열 알고리즘이다.
 
 * 기본 로직
    1. 삽입 정렬은 두 번째 인덱스부터 시작한다. 현재의 인덱스는 별도의 변수에 저장해주고, 비교 인덱스를 현재 인덱스의 -1로 잡는다.
@@ -161,8 +161,8 @@ Process finished with exit code 0
 ```
 
 ## Quick sort (퀵 정렬)
-* 퀵 정렬은 분할 정복 알고리즘의 하나로, 평균적으로 매우 빠른 수행속도를 자랑하는 정렬방법이다.
-* 합병 정렬과 달리 리스트를 비균등하게 분할하는 방법이다. 
+> * 퀵 정렬은 분할 정복 알고리즘의 하나로, 평균적으로 매우 빠른 수행속도를 자랑하는 정렬방법이다.
+> * 합병 정렬과 달리 리스트를 비균등하게 분할하는 방법이다. 
 
 * 기본 로직
   1. 리스트 안에 있는 한 요소를 선택한다. 이 때 고른 원소를 피벗(pivot) 이라고 한다
@@ -234,8 +234,137 @@ public class Quick_sort {
 Process finished with exit code 0
 ```
 
+## Merge sort (병합 정렬)
+> * 병합 정렬은 분할 정복을 이용해 정렬을 하는 방법이다.
+> * 간단히 풀어서 작은 조각으로 배열을 쪼개서 정렬한 후에 다시 붙히는 방식으로 정렬을 하는 것이다.
+
+### 기본 로직 및 구현
+* 기본 로직
+  1. 리스트의 길이가 0 또는 1이면 이미 정렬된 것으로 간주하고 반환한다.
+  2. 그렇지 않으면 리스트를 절반으로 나눈다.
+  3. 각 부분 리스트를 순환적으로 병합 정렬한후 다시 하나의 정렬된 리스트로 합병한다.
+
+* 구현
+<br> 크게 2가지의 틀로 구현이 이루어진다.
+
+1. 분할
+
+* 가장 먼저 해야할 작업으로 배열이 하나의 원소를 가지게 될때까지 쪼갠다.
+
+```java
+public void mergeSort(int arr[], int left, int right) {
+    if(left < right) {
+        int mid = (left + right)/2;
+        mergeSort(arr, left, mid);    // 왼쪽 부분 배열 정렬\
+        mergeSort(arr, mid+1, right); // 오른쪽 부분 배열 정렬
+        merge(arr, left, mid, right); // 합병
+    }
+}
+```
+
+2. 병합
+* 분할된 배열들을 병합하면서 정렬한다.
+
+```java
+public void merge(int[] arr, int left, int mid, int right) {
+    int L = left;
+    int R = mid+1;
+    int k = left;
+    int[] tmp = new int[arr.length];
+        
+    // 작은 순서대로 배열에 삽입
+    while(L <= mid && R <= right) {
+        if(arr[L] <= arr[R]) {
+            tmp[k++] = arr[L++];
+        }
+        else {
+            tmp[k++] = arr[R++];
+        }
+    }
+    
+    // 두 배열 중 하나의 배열의 원소가 모두 들어가고 남은 데이터 삽입
+    if (L > mid) {
+        for (int i = R; i <= right; i++) {
+            tmp[k++] = arr[i];
+        }
+    } else {
+        for (int i = L; i <= mid; i++) {
+            tmp[k++] = arr[i];
+        }
+    }
+    
+    // 배열에 정렬된 데이터를 삽입
+    for (int i = L; i <= right; i++) {
+        arr[i] = tmp[i];
+    }    
+}
+```
+
+이를 하나의 코드로 정리하면 아래와 같다.
+
+```java
+public class Mergesort {
+    public void mergeSort (int[] arr, int left, int right){
+        if (left < right) {
+            int mid = (left + right) / 2;
+            mergeSort(arr, left, mid);
+            mergtSort(arr, mid + 1, right);
+            merge(arr, left, mid, right);
+        }
+    }
+    public void merge (int[] arr, int left, int mid, int right){
+        int L = left;
+        int R = mid+1;
+        int k = left;
+        int[] tmp = new int[arr.length];
+        
+        while (L <= mid && R <= right) {
+            if (arr[L]<=arr[R]) {
+                tmp[k++] = arr[L++];
+            }
+            else {
+                tmp[k++] = arr[R++];
+            }
+        }
+        if(L > mid) {
+            for (int i = R; i <= right; i++) {
+                tmp[k++] = arr[i];
+            }
+        }
+        else {
+            for (int i = L; i <= mid; i++) {
+                tmp[k++] = arr[i]; 
+            }
+        }
+        for (int i = left; i <= right; i++) {
+            arr[i] = tmp[i];
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 5, 1, 6, 8, 7, 3};
+        mergeSort(arr, 0, arr.length-1);
+        for(int v : arr) {
+            System.out.print(v+" ");
+        }
+    }
+}
+```
+* 결과값
+```agsl
+1 2 3 4 5 6 7 8 
+
+Process finished with exit code 0
+```
+
+* 시간복잡도
+   * 병합정렬에서 분할된 리스트들은 각각 길이가 n/2 이므로 분할에 걸리는 시간은 O(log n) 이다.
+   * 합병에 걸리는 시간은 각 원소를 한번씩만 비교하므로 O(n)이다.
+   * 따라서 전체 시간 복잡도는 O(nlog n)이다.
+
+
 ---
-참조
+### 참조
 * [기본 정렬 알고리즘(Sorting Algoritm) 요약 정리](https://hsp1116.tistory.com/33)
 * [권오흠 교수님의 (알고리즘) 제3강 기본적인 정렬 알고리즘](https://www.youtube.com/watch?v=0dG7xTt5IfQ&list=PL52K_8WQO5oUuH06MLOrah4h05TZ4n38l&index=9)
 * [퀵 정렬(Quick sort) 이란](https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html)
+* [병합 정렬 (MERGE SORT) 기본 개념과 코드 구현, 설명](https://reakwon.tistory.com/38)
