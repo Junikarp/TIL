@@ -6,7 +6,7 @@
 > * fast
 >    * [Quick sort (퀵 정렬)](#quick-sort--퀵-정렬-)
 >    * [Merge sort (합병 정렬)](#merge-sort--병합-정렬-)
->    * Heap sort (힙 정렬)
+>    * [Heap sort (힙 정렬)](#heap-sort--힙-정렬-)
 > * O(n)
 >    * Radix sort
 
@@ -361,6 +361,153 @@ Process finished with exit code 0
    * 합병에 걸리는 시간은 각 원소를 한번씩만 비교하므로 O(n)이다.
    * 따라서 전체 시간 복잡도는 O(nlog n)이다.
 
+## Heap sort (힙 정렬)
+> 이진 힙(binary heap) 자료구조를 이용하여 정렬을 하는 방법
+
+### heap 이란
+* 완전 이진 트리의 일종으로 우선순위 큐를 위하여 만들어진 자료구조
+* 최댓값과 최솟값을 쉽게 추출할 수 있는 자료구조
+* 최대힙과 최소힙이 존재하며, 최대힙은 루트값이 최대값인 힙, 최소힙은 루트값이 최소값인 힙이다.
+
+### heap 의 표현
+* 힙은 배열의 형태로 정리하는 것이 가능하며 이 때의 성질은 아래와 같다.
+   * 왼쪽 자식 노드 인덱스 = 부모노드 인덱스 * 2 + 1
+   * 오른쪽 자식 노드 인덱스 = 부모노드 인덱스 * 2 + 2
+   * 부모노드 인덱스 = (자식 노드 인덱스 - 1) / 2
+
+![sorting_1.png](image%2Fsorting%2Fsorting_1.png)
+
+### 정렬 과정
+최대힙과 최소힙이 존재하지만 최대힙을 예시로 들어서 정렬한다.
+
+* 시간 복잡도
+   * 최악, 최선, 평균 모두 O(nlog n)의 시간 복잡도를 가진다. 
+
+1. 최대 힙 만들기 (heapify)
+   * 가장 마지막 노드의 부모 노드 서브트리부터 heapify 를 시작한다.
+   * 자식 노드 중 부모 노드보다 큰 값이 있을 경우 두 값의 위치를 교환한다.
+   * 루트까지 과정을 반복하여 최대힙을 만든다.
+```java
+public class HeapSort {
+    public void heapify(int[] arr, int n, int i) {
+        int largest = i;        // 루트 노드 (부모 노드)
+        int left = 2 * i + 1;   // 왼쪽 자식 노드
+        int right = 2 * i + 2;  // 오른쪽 자식 노드
+
+        // 왼쪽 자식 노드가 루트보다 큰 경우
+        if (left < n && arr[left] > arr[largest]) {
+            largest = left;
+        }
+
+        // 오른쪽 자식 노드가 루트보다 큰 경우
+        if (right < n && arr[right] > arr[largest]) {
+            largest = right;
+        }
+
+        // 루트가 자식보다 작은 경우
+        if (largest != i) {
+            int tmp = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = tmp;
+        
+            //변경된 자식 노드를 기준으로 재귀적 힙 구성
+            heapify(arr, n, largest);
+        }
+    }
+}
+```
+2. 정렬하기
+* 위에서 heapify 를 진행한뒤 루트에 온 최댓값을 정렬되지 않은 가장 뒷 원소와 교환한다.
+* 교환 후에 그 위치를 제외한 부분 트리에 대해 힙을 만족하도록 재구성한다.
+* 이를 반복하여 최종적으로 정렬을 완성한다.
+```java
+public class HeapSort {
+    public void heapSort(int[] arr){
+        int size = arr.length;
+    
+        // 최대 힙 구성
+        for (int i = size/2 - 1; i >= 0; i--) {
+            heapify(arr, size, i);
+        }
+    
+        // 힙에서 하나씩 요소를 추출하여 정렬
+        for (int i = size - 1; i>=0; i--) {
+            // 힙의 루트 노드(최댓값)과 마지막 요소 교환
+            int tmp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = tmp;
+            // 힙 재구성
+            heapify(arr, i, 0);
+        }
+    }
+}
+```
+
+결과적으로 두 개의 메서드를 합해 하나의 클래스로 구성하면 아래와 같다.
+```java
+public class HeapSort {
+    public static void heapify(int[] arr, int n, int i) {
+        int largest = i;        // 루트 노드 (부모 노드)
+        int left = 2 * i + 1;   // 왼쪽 자식 노드
+        int right = 2 * i + 2;  // 오른쪽 자식 노드
+
+        // 왼쪽 자식 노드가 루트보다 큰 경우
+        if (left < n && arr[left] > arr[largest]) {
+            largest = left;
+        }
+
+        // 오른쪽 자식 노드가 루트보다 큰 경우
+        if (right < n && arr[right] > arr[largest]) {
+            largest = right;
+        }
+
+        // 루트가 자식보다 작은 경우
+        if (largest != i) {
+            int tmp = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = tmp;
+        
+            //변경된 자식 노드를 기준으로 재귀적 힙 구성
+            heapify(arr, n, largest);
+        }
+    }
+    public static void heapSort(int[] arr){
+        int size = arr.length;
+
+        // 최대 힙 구성
+        for (int i = size/2 - 1; i >= 0; i--) {
+            heapify(arr, size, i);
+        }
+
+        // 힙에서 하나씩 요소를 추출하여 정렬
+        for (int i = size - 1; i>=0; i--) {
+            // 힙의 루트 노드(최댓값)과 마지막 요소 교환
+            int tmp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = tmp;
+            
+            // 힙 재구성
+            heapify(arr, i, 0);
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 5, 1, 6, 8, 7, 3};
+        heapSort(arr);
+        for(int v : arr) {
+            System.out.print(v+" ");
+        }
+    }
+}
+```
+* 결과값
+```agsl
+1 2 3 4 5 6 7 8 
+
+Process finished with exit code 0
+```
+
+
+
 
 ---
 ### 참조
@@ -368,3 +515,4 @@ Process finished with exit code 0
 * [권오흠 교수님의 (알고리즘) 제3강 기본적인 정렬 알고리즘](https://www.youtube.com/watch?v=0dG7xTt5IfQ&list=PL52K_8WQO5oUuH06MLOrah4h05TZ4n38l&index=9)
 * [퀵 정렬(Quick sort) 이란](https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html)
 * [병합 정렬 (MERGE SORT) 기본 개념과 코드 구현, 설명](https://reakwon.tistory.com/38)
+* [힙 정렬 (Heap Sort)](https://st-lab.tistory.com/225)
