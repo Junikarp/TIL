@@ -64,6 +64,6 @@ func(k-1);
 ```
 
 ---
-### Reference
+### 참조
 
-* 권오흠 교수님의 [알고리즘] 제1-1강 Recursion의 개념과 기본 예제들 (1/3) 참조 ([링크](https://www.youtube.com/watch?v=ln7AfppN7mY))
+* [권오흠 교수님의 [알고리즘] 제1-1강 Recursion의 개념과 기본 예제들 (1/3) 참조 ](https://www.youtube.com/watch?v=ln7AfppN7mY)
