@@ -31,4 +31,4 @@
 ---
 ### 참조
 * [Difference between Singly linked list and Doubly linked list](https://www.geeksforgeeks.org/difference-between-singly-linked-list-and-doubly-linked-list/)
-* * [이것이 자료구조 + 알고리즘이다 with C언어(박상현)](http://www.yes24.com/Product/Goods/111362116)
+* [이것이 자료구조 + 알고리즘이다 with C언어(박상현)](http://www.yes24.com/Product/Goods/111362116)
