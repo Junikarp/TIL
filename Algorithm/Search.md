@@ -32,7 +32,7 @@
 ## 레드 블랙 트리
 > 레드 블랙 트리는 이진 탐색 트리의 불균형한 성장으로 인한 성능 저하를 해결하기 위해서 고안된 이진 트리이다.
 
-![Tree_11.png](..%2FData_Structure%2Fimage%2FTree%2FTree_11.png)
+![Search_2.png](image%2FSearch%2FSearch_2.png)
 
 ### 레드 블랙 트리 구현 규칙
 1. 모든 노드는 빨간색, 또는 검은색이다.
@@ -52,7 +52,7 @@
    * 부모 노드의 오른쪽 자식 노드 → 부모 노드
    * 오른쪽 자식 노드의 왼쪽 자식 노드 → 부모 노드의 오른쪽 자식 노드
    
-![Tree_12.png](..%2FData_Structure%2Fimage%2FTree%2FTree_12.png)
+![Search_3.png](image%2FSearch%2FSearch_3.png)
 
 ### 1. 삽입
 > 삽입 노드는 항상 빨간색이며, 부모 노드의 형제 노드를 삼촌 노드, 부모 노드의 부모 노드를 할아버지 노드라고 한다.
@@ -62,20 +62,20 @@
 2. 할아버지 노드 → 빨간색
 3. 할아버지 노드를 삽입 노드라고 생각하며 루트까지 위 과정을 반복
 
-* ![Tree_13.png](..%2FData_Structure%2Fimage%2FTree%2FTree_13.png)
+![Search_4.png](image%2FSearch%2FSearch_4.png)
 
 #### Case 2) 삼촌 노드가 검은색, 삽입한 노드가 부모 노드의 오른쪽 자식 노드인 경우
 1. 부모를 기준으로 좌회전
 2. 부모였던 노드를 삽입한 노드로 생각하고 Case 3 에 따른다.
 
-![Tree_14.png](..%2FData_Structure%2Fimage%2FTree%2FTree_14.png)
+![Search_5.png](image%2FSearch%2FSearch_5.png)
 
 #### Case 3) 삼촌 노드가 검은색, 삽입한 노드가 부모 노드의 왼쪽 자식 노드인 경우
 1. 부모 노드 → 검은색
 2. 할아버지 노드 → 빨간색
 3. 할아버지 노드를 우회전한다.
 
-![Tree_15.png](..%2FData_Structure%2Fimage%2FTree%2FTree_15.png)
+![Search_6.png](image%2FSearch%2FSearch_6.png)
 
 ### 2. 삭제
 > 삭제 연산에서는 빨간색 노드 삭제의 경우 레드 블랙 트리 규칙을 무너뜨리지 않지만, 검은색 노드를 삭제할 경우 뒤처리가 필요하다.
