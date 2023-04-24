@@ -56,19 +56,62 @@ public class DFS {
 0 1 2 3 4 
 ```
 
+### 너비 우선 탐색(BFS: Breadth First Search)
+> 너비 우선 탐색은 한 단계씩 깊이를 더해가며 해당 깊이의 모든 정점을 방문하다가 더 이상 방문할 정점이 없을때 탐색을 종료하는 탐색 방법이다. 
 
+#### BFS 동작방식
+1. 시작 정점을 `방문했음`으로 표시하고 큐에 삽입한다.
+2. 큐로부터 정점을 제거하고, 제거한 정점의 인접 정점 중에서 아직 방문하지 않은 곳을 `방문했음`으로 표시하고 큐에 삽입한다.
+3. 큐가 비면 탐색이 끝난 것이므로, 큐가 빌 때까지 `단계 2`를 반복한다.
 
+![Graph_Traversal_2.png](image%2FGraph_Traversal%2FGraph_Traversal_2.png)
 
+* BFS 구현
+```java
+public class BFS {
 
+    public static void main(String[] args) {
 
+        int[][] graph = {
+                { 0, 1, 1, 0, 0 },
+                { 0, 0, 1, 0, 0 },
+                { 0, 0, 0, 1, 1 },
+                { 0, 0, 0, 0, 1 },
+                { 0, 0, 0, 0, 0}};
 
+        bfs(graph, 0);
+    }
 
+    public static void bfs(int[][] graph, int start) {
+        int n = graph.length; // 그래프의 정점 개수
+        boolean[] visited = new boolean[n]; // 방문 여부를 저장할 배열
 
+        Queue<Integer> queue = new LinkedList<>(); // 큐 생성
+        visited[start] = true; // 시작점 방문 표시
+        queue.offer(start); // 큐에 시작점 추가
 
+        while (!queue.isEmpty()) { // 큐가 빌 때까지 반복
+            int current = queue.poll(); // 큐에서 정점 하나 꺼내기
+            System.out.print(current + " ");
 
+            for (int i = 0; i < n; i++) { // 인접 정점 탐색
+                if (graph[current][i] == 1 && !visited[i]) { // 인접 정점이면서 방문하지 않은 정점인 경우
+                    visited[i] = true; // 방문 표시
+                    queue.offer(i); // 큐에 추가
+                }
+            }
+        }
+    }
+}
+```
+* 출력 결과
+```agsl
+0 1 2 3 4
+```
 
 
 ---
 ### 참조
-* [[알고리즘] 깊이 우선 탐색(DFS)이란](https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html)
 * [이것이 자료구조 + 알고리즘이다 with C언어(박상현)](http://www.yes24.com/Product/Goods/111362116)
+* [[알고리즘] 깊이 우선 탐색(DFS)이란](https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html)
+* [[알고리즘] 너비 우선 탐색(BFS)이란](https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html)
