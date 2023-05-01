@@ -25,3 +25,69 @@
 * Bottom-Up
    * 아래에서부터 계산을 수행하고 누적시켜서 전체 큰 문제를 해결하는 방식이다.
    * `dp[0]`부터 시작하여 반복문을 통해 점화식으로 결과를 내서 `dp[n]`까지 그 값을 전이시켜 재활용하는 방식이다.
+
+### 피보나치 수 구하기
+> 피보나치 수는 선행되는 수를 구해야만 다음 수를 구할 수 있으므로 최적 부분 구조를 갖추고 있다고 할 수 있다.
+
+* 점화식
+
+![Dynamic_Programming_1.png](image%2FDynamic_Programming%2FDynamic_Programming_1.png)
+
+* 구현
+
+![Dynamic_Programming_2.png](image%2FDynamic_Programming%2FDynamic_Programming_2.png)
+
+위의 트리에서 확인 가능하듯이 트리의 하위 노드들이 중복되는 내용이 있다. 따라서 중복되는 부분해를 별도의 테이블에 저장하는 형태로 구현할 수 있다.
+
+```java
+public class fibonacci {
+    public static int fib(int n) {
+        if (n <= 1)
+            return n;
+        else
+            return fib(n - 2) + fib(n - 1);
+    }
+    public static void main(String[] args) {
+        System.out.println(fib(5));
+    }
+}
+```
+### LCS
+> LCS 는 LCS는 주로 최장 공통 부분수열(Longest Common Subsequence)을 말하지만, 최장 공통 문자열(Longest Common Substring)을 의미하기도 한다.
+
+![Dynamic_Programming_3.png](image%2FDynamic_Programming%2FDynamic_Programming_3.png)
+
+### 최장 공통 문자열(LCS : Longest Common Substring)
+> 두 문자열이 존재할 때 두 문자열의 연속된 공통 문자열 중에서 가장 긴 문자열을 의미한다.
+
+#### 점화식
+```java
+if (i == 0 || j == 0) {
+    LCS[i][j] = 0;
+}
+else if (str1.charAt(i) == str2.charAt(j)) {
+    LCS[i][j] = LCS[i-1][j-1] + 1;
+}
+else {
+    LCS[i][j] = 0;
+}
+```
+#### 동작 방식
+1. `문자열 A`와 `문자열 B`를 한글자 씩 비교해본다.
+2. 두 문자가 다르다면 `LCS[i][j]`에 0을 표시한다.
+3. 두 문자가 같다면 `LCS[i-1][j-1]`값을 찾아 `+1`을 해준다.
+4. 두 문자열을 모두 비교할 때까지 위의 과정을 반복한다.
+   * 비교가 모두 끝나고 가장 큰 값을 갖는 구간이 최장 공통 문자열이다.
+
+
+
+
+
+
+
+---
+### 참조
+* [이것이 자료구조 + 알고리즘이다 with C언어(박상현)](http://www.yes24.com/Product/Goods/111362116)
+* [다이나믹 프로그래밍](https://velog.io/@corone_hi/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
+* [알고리즘 - Dynamic Programming(동적 계획법)](https://hongjw1938.tistory.com/47)
+* [[알고리즘] 그림으로 알아보는 LCS 알고리즘 - Longest Common Substring와 Longest Common Subsequence](https://velog.io/@emplam27/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EB%8A%94-LCS-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Longest-Common-Substring%EC%99%80-Longest-Common-Subsequence)
