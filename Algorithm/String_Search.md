@@ -13,8 +13,13 @@
 ### 카프-라빈 알고리즘
 > 카프-라빈 알고리즘은 문자열 탐색을 위해 `패턴의 해시값`과 본문 내에 있는 `하위 문자열의 해시값`만 비교하는 문자열 탐색 방법이다.
 
+![String_Search_2.png](image%2FString_Search%2FString_Search_2.png)
 
+위와 같이 하위 문자열의 해시값을 비교하는 방식으로 탐색한다. 
 
+![String_Search_3.png](image%2FString_Search%2FString_Search_3.png)
+
+이 때 i+1 번째 문자열을 해싱할 때, i 번째 문자열을 이용하여 해싱하는 방식을 사용해 기존의 해싱보다 빠른 속도로 탐색이 가능하다.
 
 
 
