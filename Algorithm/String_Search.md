@@ -36,8 +36,25 @@
 
 위와 같이 접두부와 접미부가 같은 상황에서 `접두부와 접미부의 쌍`을 `경계`라고 부른다.
 
+#### 동작 순서
+    
+1. 본문이 되는 문자열과 찾으려는 패턴을 처음에 배치한다.
 
+![String_Search_6.png](image%2FString_Search%2FString_Search_6.png)
 
+2. 불일치한 부분이 있다면, 불일치한 부분을 제외한 직전까지 일치하는 패턴에서 최대 길이의 경계를 찾는다.
+
+![String_Search_7.png](image%2FString_Search%2FString_Search_7.png)
+
+3. 불일치 부분을 제외하고 본문과 일치하는 패턴에서 경계를 찾는다. (경계가 두가지 이상이라면 길이가 최대가 될 때를 선택한다.)
+
+![String_Search_8.png](image%2FString_Search%2FString_Search_8.png)
+
+4. 선택한 경계에서 접두부와 접미부를 파악하고 찾으려는 패턴을 접미부의 시작 문자열까지 이동시킨다.
+
+![String_Search_9.png](image%2FString_Search%2FString_Search_9.png)
+
+그 후 `단계 1`부터 다시 반복한다.
 
 ---
 ### 참조
