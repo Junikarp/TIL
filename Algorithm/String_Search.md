@@ -70,6 +70,31 @@
 * 이동 거리
    * 일치하는 패턴 길이 - 최대 경계 너비
 
+따라서 구하려는 이동경로 테이블은 아래의 그림과 같다.
+  
+![String_Search_12.png](image%2FString_Search%2FString_Search_12.png)
+
+#### 패턴 매칭 과정
+
+1. 일치하는 패턴 길이가 8이므로 표에서 최대 경계 너비값 `3`을 읽는다. 
+   * 이동거리 = 7 - 3 = 4 이므로 4칸 이동한다.
+
+![String_Search_13.png](image%2FString_Search%2FString_Search_13.png)
+
+2. 4칸 이동후 일치하는 패턴의 길이가 7이므로 다시 4칸 이동한다.
+
+![String_Search_14.png](image%2FString_Search%2FString_Search_14.png)
+
+3. 모두 일치하므로 패턴 매칭을 종료한다.
+
+![String_Search_15.png](image%2FString_Search%2FString_Search_15.png)
+
+
+
+
+
+
+
 ---
 ### 참조
 * [이것이 자료구조 + 알고리즘이다 with C언어(박상현)](http://www.yes24.com/Product/Goods/111362116)
