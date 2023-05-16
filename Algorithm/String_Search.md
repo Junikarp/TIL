@@ -89,12 +89,6 @@
 
 ![String_Search_15.png](image%2FString_Search%2FString_Search_15.png)
 
-
-
-
-
-
-
 ---
 ### 참조
 * [이것이 자료구조 + 알고리즘이다 with C언어(박상현)](http://www.yes24.com/Product/Goods/111362116)
