@@ -514,6 +514,8 @@ Process finished with exit code 0
 2. 모든 데이터에 대해 가장 낮은 자리수에 해당하는 `Bucket`에 차례대로 데이터를 둔다.
 3. 0부터 차례대로 `Bucket`에서 데이터를 다시 가져온다.
 4. 가장 높은 자리수를 기준으로 하여 자리수를 높여가며 `단계 2`, `단계 3`을 반복한다.
+
+
 ---
 ### 참조
 * [기본 정렬 알고리즘(Sorting Algoritm) 요약 정리](https://hsp1116.tistory.com/33)
