@@ -8,7 +8,7 @@
 >    * [Merge sort (합병 정렬)](#merge-sort--병합-정렬-)
 >    * [Heap sort (힙 정렬)](#heap-sort--힙-정렬-)
 > * O(n)
->    * Radix sort
+>    * Radix sort (기수 정렬)
 
 ## Selection sort (선택 정렬)
 > 선택 정렬은 현재 위치에 들어갈 값을 찾아 정렬하는 배열로, 현재 위치에 저장 될 값의 크기가 작은지, 큰지에 따라서 최소 선택 정렬(Min-Selection sort)와 최대 선택 정렬(Max-Selection sort)로 구분된다.
@@ -506,9 +506,14 @@ public class HeapSort {
 Process finished with exit code 0
 ```
 
+## Radix sort (기수 정렬)
+> 기수정렬은 낮은 자리수부터 비교하며 정렬하는 정렬 알고리즘으로 비교 연산을 하지 않아 속도가 빠르지만 데이터 전체 크기에 기수테이블의 크기만한 메모리가 더 필요하다.
 
-
-
+### 정렬 과정
+1. `0~9`까지의 `Bucket(Queue 자료구조)`을 준비한다.
+2. 모든 데이터에 대해 가장 낮은 자리수에 해당하는 `Bucket`에 차례대로 데이터를 둔다.
+3. 0부터 차례대로 `Bucket`에서 데이터를 다시 가져온다.
+4. 가장 높은 자리수를 기준으로 하여 자리수를 높여가며 `단계 2`, `단계 3`을 반복한다.
 ---
 ### 참조
 * [기본 정렬 알고리즘(Sorting Algoritm) 요약 정리](https://hsp1116.tistory.com/33)
@@ -516,3 +521,4 @@ Process finished with exit code 0
 * [퀵 정렬(Quick sort) 이란](https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html)
 * [병합 정렬 (MERGE SORT) 기본 개념과 코드 구현, 설명](https://reakwon.tistory.com/38)
 * [힙 정렬 (Heap Sort)](https://st-lab.tistory.com/225)
+* [기수정렬 (Radix Sort)](https://lktprogrammer.tistory.com/48)
