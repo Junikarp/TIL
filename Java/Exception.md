@@ -10,7 +10,7 @@
 
 ## 예외 처리
 ### (1) try, catch
-try 문 안에 있는 문장들에서 예외 발생시 catch 문이 수행된다/
+try 문 안에 있는 문장들에서 예외 발생시 catch 문이 수행된다.
 * 기본 구조
 ```java
 try {
@@ -21,6 +21,33 @@ try {
     예외 2 발생 시 수행할 문장;
 }
 ```
+
+위와 같이 여러개의 `catch`문이 있을 때 위에서부터 순서대로 처리하므로 하위 클래스 `catch`블록이 먼저 오도록 작성한다.
+
+```java
+try {
+    수행 문장;
+} catch(Exception e) { // ArrayIndexOutOfBoundsException 발생 시 먼저 처리함
+    예외 처리 1;
+} catch(ArrayIndexOutOfBoundsException e) { // 도달하지 못함
+    예외 처리 2; 
+}
+```
+
+위와 같이 작성하면 `예외 처리 2`에 도달하기 전에 `예외 처리 1`에서 먼저 처리되므로 아래와 같이 작성하는 것이 좋다.
+
+```java
+try {
+    수행 문장;
+} catch(ArrayIndexOutOfBoundsException e) {
+    예외 처리 1;
+} catch(Exception e) {
+    예외 처리 2; 
+}
+```
+
+
+
 * 예외 처리 예시
 ```java
 int N;
@@ -31,7 +58,7 @@ catch (ArithmeticException e) {
     N = -1;
 }
 ```
-위의 예시에서는 `ArithmeticException` 발생 시 N 에 -1이 대입된다. 이 때 `e` 는 `ArithmeticException` 클래스의 객체, 즉 오류 객체이다.   
+위의 예시에서는 `ArithmeticException` 발생 시 N 에 -1이 대입된다. 이 때 `e` 는 `ArithmeticException` 클래스의 객체, 즉 오류 객체이다.
 
 ### (2) finally
 * 위의 try, catch 문에서 볼 수 있듯 예외가 발생시 프로그램이 중지되거나 예외 처리에 의해 catch 구문이 시행된다.
@@ -89,6 +116,9 @@ java.lang.ArithmeticException: 예외 발생
 at main.divide(main.java:5)
 at main.main(main.java:14)
 ```
+
+### (4)
+
 ---
 ### 참조
 * [점프 투 자바 예외처리 (Exception)](https://wikidocs.net/229#finally)
