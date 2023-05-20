@@ -8,6 +8,18 @@
    * 개발자가 구현한 로직에서 발생한 실수나 사용자의 영향에 의해 발생한다.
    * 개발자가 미리 예측하여 방지하는 것이 가능하며, 예외처리(Exception Handle)를 해야한다.
 
+## 예외와 예외 클래스
+> 자바의 모든 예외는 `Throwable`을 상속받아 만들어지며, 예외가 발생하면 예외 클래스로부터 객체를 생성한다.
+
+![Exception_1.png](image%2FException%2FException_1.png)
+
+예외에는 다음의 두가지가 있다.
+
+1. 일반 예외(Exception)
+   * 컴파일러가 예외 처리 코드 여부를 검사하는 예외를 말한다.
+2. 실행 예외(Runtime Exception)
+   * 컴파일러가 예외 처리 코드 여부를 검사하지 않는 예외를 말한다.
+
 ## 예외 처리
 ### (1) try, catch
 try 문 안에 있는 문장들에서 예외 발생시 catch 문이 수행된다.
@@ -85,9 +97,10 @@ public class Example {
 위와 같은 코드를 실행시킨다면 예외와 상관없이 `example.Run()` 메서드가 실행되어 문장이 출력될 것이다.
 
 ### (3) throws
-* throws 를 사용하면 메서드를 호출한 곳에서 예외를 처리하도록 한다. (예외 던지기)
+* `throws` 를 사용하면 메서드를 호출한 곳에서 예외를 처리하도록 한다. (예외 떠넘기기)
+* 예외가 여러개라면 떠넘길 예외를 쉼표로 구분하여 나열한다.
 ```java
-throw 예외 객체 //ex) throw new Exception("새로운 예외에요!") 
+throw 예외 클래스 1, 예외 클래스 2 //ex) throw new Exception("새로운 예외에요!") 
 ```
 위와 같은 형태로 사용하는 것이 가능하다.
 * 예시 코드
@@ -124,3 +137,4 @@ at main.main(main.java:14)
 * [점프 투 자바 예외처리 (Exception)](https://wikidocs.net/229#finally)
 * [Java 의 Error 와 Exception 그리고 예외처리 전략](https://toneyparky.tistory.com/40)
 * [이것만 알면 예외(EXCEPTION) 정복 - 예제를 통한 개념과 예외 처리 방법](https://reakwon.tistory.com/155)
+* [예외 클래스](http://www.tcpschool.com/java/java_exception_class)
