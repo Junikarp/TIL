@@ -59,8 +59,64 @@ Object 는 최상위 클래스이므로 위의 메소드는 모든 객체에서 
 |     getProperty()     |               운영체제와 사용자 정보 제공                |
 |       getenv()        |              운영체제의 환경 변수 정보 제공               |
 
+### 문자열 클래스
 
+#### 1. String 클래스
+> * 문자열을 저장하고 조작할 때 사용한다.
+> * 문자열 리터럴은 자동으로 String 객체로 생성되지만, String 클래스의 다양한 생성자를 이용해 직접 객체 생성도 가능하다.
 
+#### 2. StringBuilder 클래스
+> * 내부 버퍼에 문자열을 저장해두고 그 안에서 추가, 삭제, 수정 작업을 하기 위한 클래스
+> * String 을 이용하면 새로운 객체를 생성하는 것밖에 못하므로 잦은 문자열 변경을 해야한다면 효율성이 좋다.
+
+* StringBuilder 조작 메소드
+
+|     리턴 타입      |       메소드(매개 변수)       |        설명        |
+|:--------------:|:----------------------:|:----------------:|
+| StringBuilder  |      append(문자열)       |   문자열을 끝부분에 추가   |
+| StringBuilder  |    insert(위치, 문자열)     |  문자열을 지정 위치에 삽입  |
+| StringBuilder  |  delete(시작 위치, 끝 위치)   |    문자열 일부를 삭제    |
+| StringBuilder  |  replace(시작 위치, 끝 위치)  |    문자열 일부를 대체    |
+|     String     |       toString()       |    완성된 문자열 리턴    |
+
+* 사용 예시
+```java
+public class StringBuilderExample {
+  public static void main(String[] args) {
+    String data = new StringBuilder();
+    data.append("def");        // def
+    data.insert(0, "abc");     // abcdef
+    data.delete(3, 4);         // abcef
+    data.toString();
+  }
+}
+```
+```agsl
+abcef
+```
+
+### StringTokenizer 클래스
+> 문자열이 구분자로 연결되어 있을 경우, 이를 분리하기 위해 사용 가능하다.
+
+* split() 메소드를 이용한 구분
+```java
+String data = "강백호&채치수,서태웅-정대만";
+String[] names = data.split("&|,|-");
+```
+
+* StringTokenizer 클래스를 이용한 구분
+```java
+String data = "강백호/채치수/서태웅";
+StirngTokenizer st = newStringTokenizer(data, "/");
+```
+
+* StringTokenizer 조작 메소드
+
+|   리턴 타입   |     메소드(매개변수)     |          설명          |
+|:---------:|:-----------------:|:--------------------:|
+|    int    |   countTokens()   |  분리할 수 있는 문자열의 총 갯수  |
+|  boolean  |  hasMoreTokens()  |  남아 있는 문자열이 있는지 여부   |
+|  String   |    nextToken()    |     문자열을 하나씩 가져옴     |
 
 ---
 ### 참조
