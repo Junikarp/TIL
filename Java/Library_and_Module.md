@@ -95,7 +95,7 @@ public class StringBuilderExample {
 abcef
 ```
 
-### StringTokenizer 클래스
+#### 3. StringTokenizer 클래스
 > 문자열이 구분자로 연결되어 있을 경우, 이를 분리하기 위해 사용 가능하다.
 
 * split() 메소드를 이용한 구분
@@ -117,6 +117,40 @@ StirngTokenizer st = newStringTokenizer(data, "/");
 |    int    |   countTokens()   |  분리할 수 있는 문자열의 총 갯수  |
 |  boolean  |  hasMoreTokens()  |  남아 있는 문자열이 있는지 여부   |
 |  String   |    nextToken()    |     문자열을 하나씩 가져옴     |
+
+### Wrapper 클래스 (포장 클래스)
+> 자바는 기본 타입의 값을 갖는 객체를 생성할 수 있는데 이러한 객체를 포장 객체라고 한다. 
+
+|   기본 타입   |   포장 클래스    |
+|:---------:|:-----------:|
+|   byte    |    Byte     |
+|   char    |  Character  |
+|   short   |    Short    |
+|    int    |   Integer   |
+|   long    |    Long     |
+|   float   |    Float    |
+|  double   |   Double    |
+|  boolean  |   Boolean   |
+
+위와 같이 기본 타입에는 대응되는 포장 클래스가 있으며, 포장 객체는 포장하고 있는 기본 타입의 값을 변경할 수 없고, 단지 객체로 생성하는 것에만 목적이 있다.
+
+#### 박싱과 언박싱
+> * 기본 타입의 값을 포장 객체로 만드는 것을 `박싱(boxing)`, 포장 객체에서 기본 타입의 값을 얻어내는 것을 `언박싱(unboxing)`이라고 한다.
+> * 박싱은 포장 클래스 변수에 기본 타입 값이 대입될 때, 언박싱은 기본 타입 변수에 포장 객체가 대입될 때 발생한다.
+
+![Library_and_Module_1.png](image%2FLibrary_and_Module%2FLibrary_and_Module_1.png)
+
+```java
+Integer obj = 123;    // 박싱
+int value = obj       // 언박싱
+int value = obj + 123 // 언박싱 후 연산
+```
+
+#### 문자열을 기본 타입 값으로 변환
+> 대부분의 포장 클래스에는 문자열을 기본 타입 값으로 변환하기 위한 `parse + 기본타입`명으로 된 정적 메소드가 있다.
+
+#### 포장 값의 비교
+> 포장 객체는 내부 값을 비교할 때 `==`과 `!=`이  아닌 `equals`를 사용하도록 한다. 전자는 내부 값을 비교하는 것이 아니라 객체 번지를 비교하기 때문이다.
 
 ---
 ### 참조
