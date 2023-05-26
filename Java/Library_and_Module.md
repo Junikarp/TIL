@@ -165,6 +165,43 @@ int value = obj + 123 // 언박싱 후 연산
 |  Math.random()  |  랜덤값<br/>(0.0<=x<1.0)  |
 |  Math.round()   |       반올림값        |
 
+### 리플렉션 (reflection)
+> * 자바는 클래스와 인터페이스의 `패키지 정보`, `타입 정보`, `멤버(생성자, 필드, 메소드) 정보` 등을 Class 객체로 관리하며, 이를 `메타 정보`라고 부른다
+> * 메타 정보를 프로그램에서 읽고 수정하는 행위를 리플렉션이라고 한다.
+
+* Class 객체 얻는 방법
+```java
+// 클래스로부터 얻는 방법
+Class clazz = 클래스이름.class;
+Class clazz = Class.forName("패키지...클래스이름");
+
+// 객체로 부터 얻는 방법
+Class clazz = 객체참조변수.getClass();
+```
+
+#### 패키지와 타입정보 얻기
+
+| 메소드                    | 용도                |
+|------------------------|-------------------|
+| Package getPackage()   | 패키지 정보 얻기         |
+| String getSimpleName() | 패키지를 제외한 타입 이름    |
+| String getName()       | 패키지를 포함한 전체 타입 이름 |
+
+#### 멤버 정보 얻기
+
+| 메소드                                     | 용도        |
+|-----------------------------------------|-----------|
+| Constructor[] getDeclaredConstructors() | 생성자 정보 읽기 |
+| Field[] getDeclaredFields()             | 필드 정보 읽기  |
+| Method[] getDeclaredMethods()           | 메소드 정보 읽기 |
+
+#### 리소스 경로 얻기
+
+| 메소드                                          | 용도                     |
+|----------------------------------------------|------------------------|
+| URL getResource(String name)                 | 리소스 파일의 URL 리턴         |
+| InputStream getResourceAsStream(String name) | 리소스 파일의 InputStream 리턴 |
+
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
