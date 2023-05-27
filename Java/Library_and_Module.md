@@ -202,6 +202,14 @@ Class clazz = 객체참조변수.getClass();
 | URL getResource(String name)                 | 리소스 파일의 URL 리턴         |
 | InputStream getResourceAsStream(String name) | 리소스 파일의 InputStream 리턴 |
 
+## 어노테이션 (Annotation)
+> 코드에서 `@`으로 작성되는 요소를 `어노테이션`이라고 하며, 어노테이션은 클래스 또는 인터페이스를 컴파일하거나 실행 시 어떻게 처리해야 할 것인지 알려주는 설정 정보이다.
+
+#### 어노테이션의 용도
+1. 컴파일 시 사용하는 정보를 전달
+2. 빌드 툴이 코드를 자동으로 생성할 때 사용하는 정보를 전달
+3. 실행 시 특정 기능을 처리할 때 사용하는 정보를 전달
+
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
