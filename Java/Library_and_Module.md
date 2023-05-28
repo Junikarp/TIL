@@ -205,10 +205,57 @@ Class clazz = 객체참조변수.getClass();
 ## 어노테이션 (Annotation)
 > 코드에서 `@`으로 작성되는 요소를 `어노테이션`이라고 하며, 어노테이션은 클래스 또는 인터페이스를 컴파일하거나 실행 시 어떻게 처리해야 할 것인지 알려주는 설정 정보이다.
 
-#### 어노테이션의 용도
+### 어노테이션의 용도
 1. 컴파일 시 사용하는 정보를 전달
 2. 빌드 툴이 코드를 자동으로 생성할 때 사용하는 정보를 전달
 3. 실행 시 특정 기능을 처리할 때 사용하는 정보를 전달
+
+### 어노테이션 타입 정의 및 적용
+> 어노테이션도 하나의 타입이므로 사용하기 위해서는 우선 어노테이션을 정의 해야 한다.
+
+* 어노테이션 정의
+```java
+public @interface AnnotationName {
+}
+```
+
+* 어노테이션 사용
+```java
+@AnnotationName
+```
+
+#### 어노테이션 속성
+> 어노테이션은 속성을 가질 수 있으며, 속성은 타입과 이름으로 구성되고, 이름 뒤에 괄호를 붙힌다.
+
+```java
+public @interface AnnotationName {
+    String prop1();
+    int prop2() default 1;  
+}
+```
+속성의 기본값은 default 키워드로 지정 가능하며, 위와 같이 표현할 수 있다.
+
+```java
+@AnnotationName(prop1= "값"); // prop1은 기본값이 없으므로 반드시 값을 기술한다.
+@AnnotationName(prop1= "값", prop2 = 3); // prop2는 기본값으로 1이 주어졌기 때문에 기술하거나 생략 가능하다.
+```
+
+정의한 어노테이션은 위와 같이 사용가능 하다.
+
+```java
+public @interface AnnotationName {
+    String value();
+    int prop2() default 1;  
+}
+```
+어노테이션은 기본 속성인 value 를 다음과 같이 가질 수 있다.
+
+```java
+@AnnotationName("값"); // value 속성을 가진 어노테이션 사용시 값만 기술 가능하다.
+@AnnotationName(value= "값", prop2 = 3); // value 속성과 다른 속성의 값을 동시에 주고 싶다면 value 속성 이름을 반드시 기술한다.
+```
+
+
 
 ---
 ### 참조
