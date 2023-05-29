@@ -255,6 +255,43 @@ public @interface AnnotationName {
 @AnnotationName(value= "값", prop2 = 3); // value 속성과 다른 속성의 값을 동시에 주고 싶다면 value 속성 이름을 반드시 기술한다.
 ```
 
+#### 어노테이션 적용 대상
+
+|  ElementType 열거상수  |        적용 요소        |
+|:------------------:|:-------------------:|
+|        TYPE        |  클래스, 인터페이스, 열거 타입  |
+|  ANNOTATION_TYPE   |        어노테이션        |
+|       FIELD        |         필드          |
+|    CONSTRUCTOR     |         생성자         |
+|       METHOD       |         메소드         |
+|   LOCAL_VARIABLE   |        로컬 변수        |
+|      PACKAGE       |         패키지         |
+
+어노테이션 적용 대상의 종류는 위의 표와 같으며, 적용 대상을 지정할 때에는 @Target 어노테이션을 사용한다.
+
+```java
+@Target( { ElementType.TYPE, ElementType.FIELD, ElementType.METHOD } )
+public @interface AnnotationName {
+}
+```
+```java
+@AnnotationName // TYPE 에 적용
+public class ClassName {
+  @AnnotationName // FIELD 에 적용
+  private String fieldName;
+
+  // @AnnotationName -> @Target 에 CONSTRUCTOR 가 없으므로 생성자에는 적용할 수 없다.
+  public ClassName() {
+  }
+
+  @AnnotationName // METHOD 에 적용
+  public void methodName() {
+  }
+}
+```
+
+
+
 
 
 ---
