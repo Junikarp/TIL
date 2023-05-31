@@ -290,8 +290,24 @@ public class ClassName {
 }
 ```
 
+#### 어노테이션 유지 정책
+> 어노테이션을 정의할 때는 어노테이션을 언제까지 유지할지를 지정해야 한다. 유지 정책은 RetentionPolicy 열거 상수로 정의 되어 있다.
 
+|  RetentionPolicy 열거 상수  |   어노테이션 적용 시점   |    어노테이션 제거 시점    |
+|:-----------------------:|:---------------:|:-----------------:|
+|         SOURCE          |   컴파일 할 때 적용    |   컴파일 된 후에 제거됨    |
+|          CLASS          |  메모리로 로딩할 때 적용  |  메모리로 로딩된 후에 제거됨  |
+|         RUNTIME         |    실행할 때 적용     |       계속 유지       |
+ 
 
+유지 정책을 지정할 때는 `@Retention`어노테이션을 사용한다.
+
+```java
+@Target( { ElementType.TYPE, ElementType.FIELD, ElementType.METHOD } )
+@Retention( RetentionPolicy.RUNTIME ) // 유지 정책을 RUNTIME 으로 지정
+public @interface AnnotationName {
+}
+```
 
 
 ---
