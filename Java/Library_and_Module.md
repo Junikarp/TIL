@@ -309,6 +309,16 @@ public @interface AnnotationName {
 }
 ```
 
+#### 어노테이션 설정 정보 이용
+
+|     리턴 타입      |                 메소드명(매개변수)                  |                         설명                          |
+|:--------------:|:-------------------------------------------:|:---------------------------------------------------:|
+|    boolean     |  isAnnotationPresent(AnnotationName.Class)  |                지정한 어노테이션이 적용되었는지 여부                 |
+|   Annotation   |     getAnnotation(AnnotationName.Class)     |  지정한 어노테이션이 적용되어 있다면 어노테이션 리턴,<br/>그렇지 않다면 null 리턴  |
+|  Annotation[]  |          getDeclaredAnnotations()           |                  적용된 모든 어노테이션을 리턴                   |
+
+
+
 
 ---
 ### 참조
