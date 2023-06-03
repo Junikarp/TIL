@@ -26,6 +26,15 @@
 | void add(int index, E element) | 주어진 인덱스에 객체 추가          |
 | set(int index, E element)      | 주어진 인덱스의 객체를 새로운 객체로 교체 |
 
+* 객체 검색
+
+| 메소드                        | 기능                  |
+|----------------------------|---------------------|
+| boolean contains(Object o) | 주어진 객체가 저장되어 있는지 여부 |
+| E get(int index)           | 주어진 인덱스에 저장된 객체 리턴  |
+| isEmpty()                  | 컬렉션이 비어있는지 조사       |
+| int size()                 | 저장되어 있는 전체 객체수를 리턴  |
+
 
 
 
