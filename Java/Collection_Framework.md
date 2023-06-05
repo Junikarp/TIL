@@ -43,6 +43,15 @@
 | E remove(int index)      | 주어진 인덱스에 저장된 객체 삭제 |
 | boolean remove(object o) | 주어진 객체를 삭제         |
 
+### ArrayList
+> List 컬렉션에서 가장 많이 사용하는 컬렉션으로 객체 추가 시 내부 배열에 객체가 저장된다. 일반 배열과 다르게 객체를 제한없이 추가 가능하며 List 컬렉션은 객체의 번지를 저장한다.
+
+#### ArrayList 생성
+```java
+List<E> list = new ArrayList<E>(); // E에 지정된 타입의 객체만 저장
+List<E> list = new ArrayList<>();  // E에 지정된 타입의 객체만 저장
+List list = new ArrayList();       // 모든 타입의 객체 저장
+```
 
 ---
 ### 참조
