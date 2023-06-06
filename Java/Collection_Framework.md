@@ -53,6 +53,17 @@ List<E> list = new ArrayList<>();  // E에 지정된 타입의 객체만 저장
 List list = new ArrayList();       // 모든 타입의 객체 저장
 ```
 
+### Vector
+> `ArrayList` 와 동일한 내부 구조를 가지고 있지만 동기화된 메소드로 구성되어 있어 멀티 스레드가 동시에 `Vector()` 메소드를 실행 불가하다.
+
+#### Vector 생성
+```java
+List<E> list = new Vector<E>(); // E에 지정된 타입의 객체만 저장
+List<E> list = new Vector<>();  // E에 지정된 타입의 객체만 저장
+List list = new Vector();       // 모든 타입의 객체 저장
+```
+
+
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
