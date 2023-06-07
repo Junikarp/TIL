@@ -63,6 +63,16 @@ List<E> list = new Vector<>();  // E에 지정된 타입의 객체만 저장
 List list = new Vector();       // 모든 타입의 객체 저장
 ```
 
+### LinkedList
+> `ArrayList`와 사용 방법은 동일하지만 인접 객체를 체인처럼 연결해서 관리한다는 차이점이 존재한다. 빈번한 객체 삽입, 삭제 작업이 필요 시 성능면에서 유리하다.
+
+#### LinkedList 생성
+```java
+List<E> list = new ArrayList<E>(); // E에 지정된 타입의 객체만 저장
+List<E> list = new ArrayList<>();  // E에 지정된 타입의 객체만 저장
+List list = new ArrayList();       // 모든 타입의 객체 저장
+```
+
 
 ---
 ### 참조
