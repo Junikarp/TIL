@@ -73,6 +73,11 @@ List<E> list = new ArrayList<>();  // E에 지정된 타입의 객체만 저장
 List list = new ArrayList();       // 모든 타입의 객체 저장
 ```
 
+### Map 컬렉션
+> * Map 컬렉션은 `key` 와 `value` 로 구성된 `Entry` 객체를 저장하는 구조를 가지고 있으며, `key`와 `value`는 모두 객체이다.
+> * `key` 는 중복이 불가하고, `value`는 중복이 가능하다.
+
+
 
 ---
 ### 참조
