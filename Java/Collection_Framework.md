@@ -73,6 +73,22 @@ List<E> list = new ArrayList<>();  // E에 지정된 타입의 객체만 저장
 List list = new ArrayList();       // 모든 타입의 객체 저장
 ```
 
+#### Map 컬렉션
+
+* 객체 추가
+ 
+|메소드|기능|
+|---|---|
+|V put(K key, V value)|주어진 키로 값을 저장한다|
+
+* 객체 검색
+  
+| 메소드                                 |기능|
+|-------------------------------------|---|
+| boolean containsKey(Object key)     |주어진 키가 있는지 여부 파악|
+| boolean containsValue(Object value) |주어진 값이 있는지 여부 파악|​
+| Set<Map.Entry<K, V>> entrySet()     |키와 값의 쌍으로 구성된 모든 Map.entry 객체를 Set 에 담아서 반환|
+
 
 ---
 ### 참조
