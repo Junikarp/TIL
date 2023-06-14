@@ -117,6 +117,15 @@ List list = new ArrayList();       // 모든 타입의 객체 저장
 |  boolean containsValue(Object value)  |               주어진 값이 있는지 여부 파악               |​
 |    Set<Map.Entry<K, V>> entrySet()    | 키와 값의 쌍으로 구성된 모든 Map.entry 객체를 Set 에 담아서 반환  |
 
+### HashSet
+> Set 컬렉션에서 가장 많이 사용하는 형태이다.
+
+#### HashSet 생성
+```java
+Set<E> list = new HashSet<E>(); // E에 지정된 타입의 객체만 저장
+Set<E> list = new HashSet<>();  // E에 지정된 타입의 객체만 저장
+Set set = new HashSet();       // 모든 타입의 객체 저장
+```
 
 ---
 ### 참조
