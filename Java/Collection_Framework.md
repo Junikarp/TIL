@@ -101,7 +101,21 @@ List list = new ArrayList();       // 모든 타입의 객체 저장
 |        void clear()        |     저장된 모든 객체 삭제     |
 |  boolean remove(object o)  |      주어진 객체를 삭제      |
 
+### HashSet
+> Set 컬렉션에서 가장 많이 사용하는 형태이다.
+
+#### HashSet 생성
+```java
+Set<E> list = new HashSet<E>(); // E에 지정된 타입의 객체만 저장
+Set<E> list = new HashSet<>();  // E에 지정된 타입의 객체만 저장
+Set set = new HashSet();        // 모든 타입의 객체 저장
+```
+
 ## Map 컬렉션
+> * Map 컬렉션은 `키(key)`와 `값(value)`으로 구성된 엔트리 객체를 생성한다.
+> * 키는 중복 저장 불가능하지만 값은 중복 저장 할수 있다.
+> * 기존에 저장된 키와 동일한 키로 값 저장시 기존 값이 새로운 값으로 대체된다.
+
 
 * 객체 추가
  
