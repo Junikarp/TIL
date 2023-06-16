@@ -124,7 +124,7 @@ List list = new ArrayList();       // 모든 타입의 객체 저장
 ```java
 Set<E> list = new HashSet<E>(); // E에 지정된 타입의 객체만 저장
 Set<E> list = new HashSet<>();  // E에 지정된 타입의 객체만 저장
-Set set = new HashSet();       // 모든 타입의 객체 저장
+Set set = new HashSet();        // 모든 타입의 객체 저장
 ```
 
 ---
