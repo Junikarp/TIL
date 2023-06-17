@@ -106,8 +106,8 @@ List list = new ArrayList();       // 모든 타입의 객체 저장
 
 #### HashSet 생성
 ```java
-Set<E> list = new HashSet<E>(); // E에 지정된 타입의 객체만 저장
-Set<E> list = new HashSet<>();  // E에 지정된 타입의 객체만 저장
+Set<E> set = new HashSet<E>(); // E에 지정된 타입의 객체만 저장
+Set<E> set = new HashSet<>();  // E에 지정된 타입의 객체만 저장
 Set set = new HashSet();        // 모든 타입의 객체 저장
 ```
 
@@ -115,7 +115,6 @@ Set set = new HashSet();        // 모든 타입의 객체 저장
 > * Map 컬렉션은 `키(key)`와 `값(value)`으로 구성된 엔트리 객체를 생성한다.
 > * 키는 중복 저장 불가능하지만 값은 중복 저장 할수 있다.
 > * 기존에 저장된 키와 동일한 키로 값 저장시 기존 값이 새로운 값으로 대체된다.
-
 
 * 객체 추가
  
@@ -131,14 +130,13 @@ Set set = new HashSet();        // 모든 타입의 객체 저장
 |  boolean containsValue(Object value)  |               주어진 값이 있는지 여부 파악               |​
 |    Set<Map.Entry<K, V>> entrySet()    | 키와 값의 쌍으로 구성된 모든 Map.entry 객체를 Set 에 담아서 반환  |
 
-### HashSet
-> Set 컬렉션에서 가장 많이 사용하는 형태이다.
+### HashMap
+> 키로 사용할 객체가 hashCode() 메소드의 리턴값이 같고 equal() 메소드가 true 를 리턴할 경우 동일 키로 보고 중복 저장을 허용하지 않는다.
 
-#### HashSet 생성
+#### HashMap 생성
 ```java
-Set<E> list = new HashSet<E>(); // E에 지정된 타입의 객체만 저장
-Set<E> list = new HashSet<>();  // E에 지정된 타입의 객체만 저장
-Set set = new HashSet();        // 모든 타입의 객체 저장
+Map<K,V> map = new HashMap<K,V>();  // 키와 값의 타입을 지정
+Map map = new HashMap();            // 거의 사용하지 않는 방식
 ```
 
 ---
