@@ -124,11 +124,16 @@ Set set = new HashSet();        // 모든 타입의 객체 저장
 
 * 객체 검색
   
-|                  메소드                  |                      기능                      |
-|:-------------------------------------:|:--------------------------------------------:|
-|    boolean containsKey(Object key)    |               주어진 키가 있는지 여부 파악               |
-|  boolean containsValue(Object value)  |               주어진 값이 있는지 여부 파악               |​
-|    Set<Map.Entry<K, V>> entrySet()    | 키와 값의 쌍으로 구성된 모든 Map.entry 객체를 Set 에 담아서 반환  |
+|                 메소드                 |                     기능                      |
+|:-----------------------------------:|:-------------------------------------------:|
+|   boolean containsKey(Object key)   |              주어진 키가 있는지 여부 파악               |
+| boolean containsValue(Object value) |              주어진 값이 있는지 여부 파악               |​
+|   Set<Map.Entry<K, V>> entrySet()   | 키와 값의 쌍으로 구성된 모든 Map.entry 객체를 Set 에 담아서 반환 |
+|          V get(Object key)          |                주어진 키의 값을 리턴                 |
+|          boolean isEmpty()          |                컬렉션이 비어있는지 여부                |
+|           Set<K> KeySet()           |            모든 키를 Set 객체에 담아서 리턴             |
+|             int size()              |               저장된 키의 총 수를 리턴                |
+|       Collection<V> values()        |        저장된 모든 값 Collection 에 담아서 리턴         |
 
 ### HashMap
 > 키로 사용할 객체가 hashCode() 메소드의 리턴값이 같고 equal() 메소드가 true 를 리턴할 경우 동일 키로 보고 중복 저장을 허용하지 않는다.
