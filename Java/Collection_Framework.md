@@ -144,6 +144,18 @@ Map<K,V> map = new HashMap<K,V>();  // 키와 값의 타입을 지정
 Map map = new HashMap();            // 거의 사용하지 않는 방식
 ```
 
+### Hashtable
+> * HashMap 과 동일한 내부구조를 가지고 있다.
+> * Hashtable 은 동기화 메소드로 구성되어 있으므로 멀티스레드가 동시에 Hashtable 메소드를 실행 할 수 없다.
+> * 멀티 스레드 환경에서도 안전하게 객체를 추가, 삭제 가능하다.
+
+#### HashMap 생성
+```java
+Map<K,V> map = new Hashtable<K,V>();  // 키와 값의 타입을 지정
+Map<K,V> map = new Hashtable<K,V>();  // 키와 값의 타입을 지정(뒤 쪽 생략)
+Map map = new HashMap();              // 거의 사용하지 않는 방식
+```
+
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
