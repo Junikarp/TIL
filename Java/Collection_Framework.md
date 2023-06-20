@@ -136,7 +136,7 @@ Set set = new HashSet();        // 모든 타입의 객체 저장
 |       Collection<V> values()        |        저장된 모든 값 Collection 에 담아서 리턴         |
 
 ### HashMap
-> 키로 사용할 객체가 hashCode() 메소드의 리턴값이 같고 equal() 메소드가 true 를 리턴할 경우 동일 키로 보고 중복 저장을 허용하지 않는다.
+> 키로 사용할 객체가 `hashCode()` 메소드의 리턴값이 같고 `equal()` 메소드가 true 를 리턴할 경우 동일 키로 보고 중복 저장을 허용하지 않는다.
 
 #### HashMap 생성
 ```java
@@ -145,8 +145,8 @@ Map map = new HashMap();            // 거의 사용하지 않는 방식
 ```
 
 ### Hashtable
-> * HashMap 과 동일한 내부구조를 가지고 있다.
-> * Hashtable 은 동기화 메소드로 구성되어 있으므로 멀티스레드가 동시에 Hashtable 메소드를 실행 할 수 없다.
+> * `HashMap` 과 동일한 내부구조를 가지고 있다.
+> * `Hashtable` 은 동기화 메소드로 구성되어 있으므로 멀티스레드가 동시에 `Hashtable` 메소드를 실행 할 수 없다.
 > * 멀티 스레드 환경에서도 안전하게 객체를 추가, 삭제 가능하다.
 
 #### HashMap 생성
@@ -155,6 +155,16 @@ Map<K,V> map = new Hashtable<K,V>();  // 키와 값의 타입을 지정
 Map<K,V> map = new Hashtable<K,V>();  // 키와 값의 타입을 지정(뒤 쪽 생략)
 Map map = new HashMap();              // 거의 사용하지 않는 방식
 ```
+
+### Properties
+> `Properties` 는 `Hashtable` 의 자식 클래스로 키와 값을 `String` 타입으로 제한한 컬렉션이다.
+
+#### Properties 생성
+```java
+Properties properties = new Properties();
+```
+
+
 
 ---
 ### 참조
