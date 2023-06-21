@@ -157,11 +157,29 @@ Map map = new HashMap();              // 거의 사용하지 않는 방식
 ```
 
 ### Properties
-> `Properties` 는 `Hashtable` 의 자식 클래스로 키와 값을 `String` 타입으로 제한한 컬렉션이다.
+> * `Properties` 는 `Hashtable` 의 자식 클래스로 키와 값을 `String` 타입으로 제한한 컬렉션이다.
+> * 프로퍼티 파일은 키와 값이 `=`기호로 연결되어 있는 텍스트 파일이다.
+> * Properties 는 프로퍼티 파일의 내용을 코드에서 쉽게 읽을 수 있도록 한다.
+
+#### 프로퍼티 파일
+
+* database.properties
+
+```java
+driver=oracle.jdbc.OracleDriver
+        ...
+admin=\uD64D\uAE38\uB3D9
+```
+
 
 #### Properties 생성
 ```java
 Properties properties = new Properties();
+```
+
+#### 프로퍼티 파일 내용 로드
+```java
+properties.load(Xxx.class.getResourceAsStream("database.properties"))
 ```
 
 
