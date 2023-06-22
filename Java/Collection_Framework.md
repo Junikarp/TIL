@@ -149,7 +149,7 @@ Map map = new HashMap();            // 거의 사용하지 않는 방식
 > * `Hashtable` 은 동기화 메소드로 구성되어 있으므로 멀티스레드가 동시에 `Hashtable` 메소드를 실행 할 수 없다.
 > * 멀티 스레드 환경에서도 안전하게 객체를 추가, 삭제 가능하다.
 
-#### HashMap 생성
+#### Hashtable 생성
 ```java
 Map<K,V> map = new Hashtable<K,V>();  // 키와 값의 타입을 지정
 Map<K,V> map = new Hashtable<K,V>();  // 키와 값의 타입을 지정(뒤 쪽 생략)
@@ -182,7 +182,17 @@ Properties properties = new Properties();
 properties.load(Xxx.class.getResourceAsStream("database.properties"))
 ```
 
+## 검색 기능 강화 컬렉션
+> 컬렉션 프레임워크가 제공하는 검색 기능 강화 컬렉션에는 `TreeSet`과 `TreeMap`이 있다.
 
+### TreeSet
+> `TreeSet`은 이진 트리 기반의 Set 컬렉션이다.
+
+#### TreeSet 생성
+```java
+TreeSet<E> treeSet = new TreeSet<E>();
+TreeSet<> treeSet = new TreeSet<>();
+```
 
 ---
 ### 참조
