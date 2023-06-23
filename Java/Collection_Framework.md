@@ -194,6 +194,20 @@ TreeSet<E> treeSet = new TreeSet<E>();
 TreeSet<> treeSet = new TreeSet<>();
 ```
 
+#### TreeSet 메소드
+|          메소드           |                           설명                            |
+|:----------------------:|:-------------------------------------------------------:|
+|        first()         |                      제일 낮은 객체를 리턴                       |
+|         last()         |                      제일 높은 객체를 리턴                       |
+|       lower(E e)       |                  주어진 객체보다 바로 아래 객체를 리턴                  |
+|      higher(E e)       |                  주어진 객체보다 바로 위 객체를 리턴                   |
+|       floor(E e)       |  주어진 객체와 동등한 객체가 있다면 리턴,<br/>없다면 주어진 객체의 바로 아래의 객체를 리턴  |
+|      ceiling(E e)      | 주어진 객체와 동등한 객체가 있으면 리턴,<br/>만약 없다면 주어진 객체의 바로 위의 객체를 리턴 |
+|      pollFirst()       |                 제일 낮은 객체를 꺼내오고 컬렉션에서 제거                 |
+|       pollLast()       |                 제일 높은 객체를 꺼내오고 컬렉션에서 제거                 |
+|  descendingIterator()  |                 내림차순으로 정렬된 Iterator 리턴                  |
+|    descendingSet()     |               내림차순으로 정렬된 NavigableSet 리턴                |
+
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
