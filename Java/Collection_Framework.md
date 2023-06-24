@@ -194,6 +194,7 @@ TreeSet<E> treeSet = new TreeSet<E>();
 TreeSet<> treeSet = new TreeSet<>();
 ```
 
+
 #### TreeSet 메소드
 |          메소드           |                           설명                            |
 |:----------------------:|:-------------------------------------------------------:|
@@ -208,6 +209,15 @@ TreeSet<> treeSet = new TreeSet<>();
 |  descendingIterator()  |                 내림차순으로 정렬된 Iterator 리턴                  |
 |    descendingSet()     |               내림차순으로 정렬된 NavigableSet 리턴                |
 
+
+### TreeMap
+> TreeMap 은 이진 트리를 기반으로 한 Map 컬렉션으로 TreeSet 과 달리 키와 값이 저장된 Entry 를 저장한다.
+
+#### TreeMap 생성
+```java
+TreeMap<K, V> treeMap = new TreeMap<K, V>();
+TreeMap<K, V> treeMap = new TreeMap<>();
+```
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
