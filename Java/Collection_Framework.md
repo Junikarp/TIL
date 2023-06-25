@@ -219,6 +219,20 @@ TreeMap<K, V> treeMap = new TreeMap<K, V>();
 TreeMap<K, V> treeMap = new TreeMap<>();
 ```
 
+#### TreeMap 메소드
+|         메소드          |                                    설명                                    |
+|:--------------------:|:------------------------------------------------------------------------:|
+|     firstEntry()     |                           제일 낮은 `Map.Entry` 리턴                           |
+|     lastEntry()      |                           제일 높은 `Map.Entry` 리턴                           |
+|  lowerEntry(K key)   |                       주어진 키보다 바로 아래 `Map.Entry` 리턴                       |
+|  higherEntry(K key)  |                       주어진 키보다 바로 위 `Map.Entry` 리턴                        |
+|  floorEntry(K key)   | 주어진 키와 동등한 키가 있다면 해당 `Map.Entry` 리턴,<br/>없다면 주어진 키 바로 위의 `Map.Entry` 리턴  |
+| ceilingEntry(K key)  | 주어진 키와 동등한 키가 있다면 해당 `Map.Entry` 리턴,<br/>없다면 주어진 키 바로 아래의 `Map.Entry` 리턴 |
+|   pollFirstEntry()   |                    제일 낮은 `Map.Entry`를 꺼내오고 컬렉션에서 제거함                     |
+|   pollLastEntry()    |                    제일 높은 `Map.Entry`를 꺼내오고 컬렉션에서 제거함                     |
+|  descendingKeySet()  |                     내림차순으로 정렬된 키의 `NavigableSet`을 리턴                     |
+|   descendingMap()    |               내림차순으로 정렬된 `Map.Entry`의 `NavigableMap` 을 리턴                |
+
 ### Comparable & Comparator
 > * TreeSet 과 TreeMap 에 저장되는 키 객체는 저장과 동시에 오름차순으로 정렬되는데, 객체가 Comparable 인터페이스를 구현하고 있어야 가능하다.
 > * Integer, Double, String 타입은 모두 Comparable 을 구현하고 있지만, 사용자 정의 객체는 따로 Comparable 을 구현하고 있어야 한다.
