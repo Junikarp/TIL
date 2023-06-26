@@ -218,6 +218,12 @@ TreeSet<> treeSet = new TreeSet<>();
 TreeMap<K, V> treeMap = new TreeMap<K, V>();
 TreeMap<K, V> treeMap = new TreeMap<>();
 ```
+
+### Comparable & Comparator
+> * TreeSet 과 TreeMap 에 저장되는 키 객체는 저장과 동시에 오름차순으로 정렬되는데, 객체가 Comparable 인터페이스를 구현하고 있어야 가능하다.
+> * Integer, Double, String 타입은 모두 Comparable 을 구현하고 있지만, 사용자 정의 객체는 따로 Comparable 을 구현하고 있어야 한다.
+
+
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
