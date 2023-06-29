@@ -248,6 +248,10 @@ TreeSet<E> treeSet = new TreeSet<E>(new ComparatorImpl());
 TreeMap<K,V> treeMap = new TreeMap<K,V>(new ComparatorImpl());
 ```
 
+| 리턴 타입 | 메소드                | 설명                                                                              |
+|-------|--------------------|---------------------------------------------------------------------------------|
+| int   | compare(T o1,T o2) | `o1`과 `o2`가 동등하다면 0 리턴,<br/>`o1`이 `o2`보다 앞에 오게 하려면 음수 리턴,<br/> `o1`이 `o2`보다 뒤에 오게 하려면 양수 리턴 |
+
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
