@@ -255,7 +255,7 @@ TreeMap<K,V> treeMap = new TreeMap<K,V>(new ComparatorImpl());
 ## LIFO & FIFO
 
 ### Stack
-> Stack 에 대한 내용은 링크로 대체한다. -> [Stack](https://github.com/Junikarp/TIL/blob/main/Data_Structure/02_Stack.md)
+> Stack 에 대한 내용은 링크 -> [Stack](https://github.com/Junikarp/TIL/blob/main/Data_Structure/02_Stack.md)
 
 #### Stack 생성
 ```
