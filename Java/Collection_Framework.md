@@ -258,7 +258,7 @@ TreeMap<K,V> treeMap = new TreeMap<K,V>(new ComparatorImpl());
 > Stack 에 대한 내용은 링크 -> [Stack](https://github.com/Junikarp/TIL/blob/main/Data_Structure/02_Stack.md)
 
 #### Stack 생성
-```
+```java
 Stack<E> stack = new Stack<E>;
 Stack<E> stack = new Stack<>;  // 타입 생략 가능
 ```
@@ -270,6 +270,14 @@ Stack<E> stack = new Stack<>;  // 타입 생략 가능
 |    E    |  push(E item)  |  주어진 객체를 스택에 삽입한다.  |
 |    E    |     pop()      |  스택의 맨 위 객체를 빼낸다.   |
 
+### Queue
+> Queue 에 대한 내용은 링크 -> [Queue](https://github.com/Junikarp/TIL/blob/main/Data_Structure/03_Queue.md)
+
+#### Queue 생성
+```java
+Queue<E> queue = new LinkedList<E>;
+Queue<E> queue = new LinkedList<>;  // 타입 생략 가능
+```
 
 
 ---
