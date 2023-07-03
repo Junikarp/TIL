@@ -279,6 +279,14 @@ Queue<E> queue = new LinkedList<E>;
 Queue<E> queue = new LinkedList<>;  // 타입 생략 가능
 ```
 
+#### Queue 메소드
+
+|  리턴 타입  |    메소드     |       설명        |
+|:-------:|:----------:|:---------------:|
+| boolean | offer(E e) | 주어진 객체를 큐에 넣는다. |
+|    E    |   poll()   |  큐에서 객체를 빼낸다.   |
+
+
 
 ---
 ### 참조
