@@ -287,7 +287,8 @@ Queue<E> queue = new LinkedList<>;  // 타입 생략 가능
 |    E    |   poll()   |  큐에서 객체를 빼낸다.   |
 
 ## 동기화된(Synchronized) 컬렉션
-> 비동기화된 컬렉션을 멀티스레드 환경에서 사용할 경우 동기화된 컬렉션으로 래핑하여 사용하는 것이 안전하다.
+> * 비동기화된 컬렉션을 멀티스레드 환경에서 사용할 경우 동기화된 컬렉션으로 래핑하여 사용하는 것이 안전하다.
+> * `ArrayList`, `HashSet`, `HashMap` 은 멀티스레드 환경에서 안전하지 않으므로 컬렉션을 Thread-safe 로 만들기 위해서는 `Collections.synchronizedXxx()`메소드를 이용해야 한다.
 
 ---
 ### 참조
