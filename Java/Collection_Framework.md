@@ -290,6 +290,14 @@ Queue<E> queue = new LinkedList<>;  // 타입 생략 가능
 > * 비동기화된 컬렉션을 멀티스레드 환경에서 사용할 경우 동기화된 컬렉션으로 래핑하여 사용하는 것이 안전하다.
 > * `ArrayList`, `HashSet`, `HashMap` 은 멀티스레드 환경에서 안전하지 않으므로 컬렉션을 Thread-safe 로 만들기 위해서는 `Collections.synchronizedXxx()`메소드를 이용해야 한다.
 
+### 비동기화된 컬렉션을 동기화된 컬렉션으로 래핑
+
+#### List 컬렉션
+> `ArrayList` 를 `Collections` 클래스의 정적 메소드를 통해서 래핑하면 `ThreadSafe` 한 컬렉션을 만들 수 있다.
+```java
+List<T> list = Collections.synchronizedList(new ArrayList<T>());
+```
+
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
