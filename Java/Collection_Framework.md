@@ -298,6 +298,11 @@ Queue<E> queue = new LinkedList<>;  // 타입 생략 가능
 List<T> list = Collections.synchronizedList(new ArrayList<T>());
 ```
 
+#### Set 컬렉션
+```java
+Set<E> set = Collections.synchronizedSet(new HashSet<E>);
+```
+
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
