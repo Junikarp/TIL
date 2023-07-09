@@ -303,6 +303,11 @@ List<T> list = Collections.synchronizedList(new ArrayList<T>());
 Set<E> set = Collections.synchronizedSet(new HashSet<E>);
 ```
 
+#### Map 컬렉션
+```java
+Map<K, V> map = Collections.synchronizedMap(new HashMap<K, V>));
+```
+
 ---
 ### 참조
 * [이것이 자바다(한빛미디어)](http://www.yes24.com/Product/Goods/112208302)
