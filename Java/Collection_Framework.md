@@ -298,16 +298,19 @@ Queue<E> queue = new LinkedList<>;  // 타입 생략 가능
 List<T> list = Collections.synchronizedList(new ArrayList<T>());
 ```
 
+* 비동기화된 컬렉션인 `ArrayList`를 `Collections`클래스의 정적메소드를 통해서 래핑시켜주면 `ThreadSafe`한 컬렉션을 만들 수 있다.\
+
 #### Set 컬렉션
 ```java
 Set<E> set = Collections.synchronizedSet(new HashSet<E>);
 ```
 
-* 비동기화된 컬렉션인 `ArrayList`를 `Collections`클래스의 정적메소드를 통해서 래핑시켜주면 `ThreadSafe`한 컬렉션을 만들 수 있다.
+* 비동기화된 컬렉션인 `HashSet`를 `Collections`클래스의 정적메소드를 통해서 래핑시켜주면 `ThreadSafe`한 컬렉션을 만들 수 있다.
 
 #### Map 컬렉션
 ```java
 Map<K, V> map = Collections.synchronizedMap(new HashMap<K, V>));
+
 ```
 
 ---
