@@ -310,8 +310,10 @@ Set<E> set = Collections.synchronizedSet(new HashSet<E>);
 #### Map 컬렉션
 ```java
 Map<K, V> map = Collections.synchronizedMap(new HashMap<K, V>));
-
 ```
+* 
+* 비동기화된 컬렉션인 `HashMap`를 `Collections`클래스의 정적메소드를 통해서 래핑시켜주면 `ThreadSafe`한 컬렉션을 만들 수 있다.
+
 
 ---
 ### 참조
