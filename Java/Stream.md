@@ -22,3 +22,8 @@ List<String> list = Arrays.asList("정대만", "채치수", "서태웅");
 Stream<String> stream = list.stream();
 stream forEach(name -> System.out.println(name));
 ```
+
+### 스트림의 특징
+> * Iterator 와 비슷한 역할을 하는 반복자
+> * 람다식으로 요소 처리 코드 제공
+> * 내부 반복자 사용 -> 병렬처리가 쉬움
