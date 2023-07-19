@@ -30,3 +30,7 @@ stream forEach(name -> System.out.println(name));
 > * 내부 반복자 사용 -> 병렬처리가 쉬움
 >    * 컬렉션 내부에서 요소들 반복시킴
 >    * 개발자는 요소당 처리해야할 코드만 제공
+
+
+## 스트림의 종류
+> java.util.stream 패키지에 스트림 API가 있음
