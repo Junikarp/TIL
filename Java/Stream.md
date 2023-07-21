@@ -33,4 +33,11 @@ stream forEach(name -> System.out.println(name));
 
 
 ## 스트림의 종류
-> java.util.stream 패키지에 스트림 API가 있음
+> java.util.stream 패키지에 스트림 API가 존재한다.
+
+* BaseStream
+  * 모든 스트림에서 사용가능한 공통 메소드(직접 사용은 안됨)
+* Stream
+  * 객체의 요소를 처리
+* IntStream, LongStream, DoubleStream
+  * 각각의 기본타입인 `int`,`long`,`double` 요소를 처리 
